@@ -1,6 +1,7 @@
 
 <div class= "container">
   <%= flash[:notice] %>
+  <%= flash[:caution] %>
   <h1>신청현황</h1>
   <table>
     <thead>
@@ -14,7 +15,14 @@
     <tbody>
       <% @user_admin.each do |u_i| %>
         <tr>
-          <td><%= u_i.name %></td>
+          <td>
+            <%= u_i.name %>&nbsp
+            <% if u_i.admin == true %>
+              <%= link_to "[전체삭제]", "/destroy_all/:u_i.id", method:"delete" %>
+            <% else %>
+              <%= link_to "[삭제]", admin_path(u_i.id), method: "delete" %>
+            <% end %>
+          </td>
           <td><%= u_i.stuN %></td>
           <td><%= u_i.email %></td>
           <% if u_i.seatNumber == nil%>

@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root "posts#index"
   resources :posts, except: [:show]
   resources :box, only: [:index, :new, :create, :destroy]
-  resources :admin, only: [:index]
+  resources :admin, only: [:index, :destroy]
+  delete "/destroy_all/:id" => "admin#destroy_all"
   resources :csv do
    collection { post :import }
   end
