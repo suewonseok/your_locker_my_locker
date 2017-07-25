@@ -1,0 +1,7 @@
+<div class="container">
+  <h4>파일선택</h4>
+  <%= form_tag import_csv_index_path, multipart: true do %>
+   <%= file_field_tag :file %>
+   <%= submit_tag "등록" %>
+  <% end %>
+</div>

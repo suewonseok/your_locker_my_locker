@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SnsSample</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">네자리 내자리</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="/posts">HOME</a></li>
+          <% if user_signed_in? %>
+            <li><%= link_to new_post_path do %><%= current_user.name %><% end %></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: "delete" %></li>
+            <li><%= link_to "사물함 신청", box_index_path %></li>
+            <% if user_admin? %>
+              <li><%= link_to "신청현황", admin_index_path %></li>
+              <li><%= link_to "학생등록", csv_index_path, method:"get" %></li>
+            <% end %>
+          <% else %>
+            <li><a href="/users/sign_in">Sign in</a></li>
+            <li><a href="/users/sign_up">Sign up</a></li>
+          <% end %>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li><a href="collapsible.html">Javascript</a></li>
+          <li><a href="mobile.html">Mobile</a></li>
+        </ul>
+      </div>
+    </nav>
+    <%= flash[:alert] %>
+    <%= yield %>
+  </body>
+</html>

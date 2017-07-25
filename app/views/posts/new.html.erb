@@ -1,0 +1,12 @@
+<div class=" container">
+  <h1>회원정보</h1>
+  <ul>
+    <li>이름 : <%= current_user.name %></li>
+    <li>이메일 : <%= current_user.email %></li>
+    <% if current_user.seatNumber != nil %>
+      <li>사물함 : <%= current_user.seatNumber %><%= link_to "사물함 취소", box_path(current_user.id), method:"delete" %></li>
+    <% else %>
+      <li>사물함 : 신청하지 않으셨습니다.</li>
+    <% end %>
+  </ul>
+</div>

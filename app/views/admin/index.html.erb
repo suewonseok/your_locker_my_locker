@@ -1,0 +1,29 @@
+
+<div class= "container">
+  <%= flash[:notice] %>
+  <h1>신청현황</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>이름</th>
+        <th>학번</th>
+        <th>이메일</th>
+        <th>신청한 사물함</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user_admin.each do |u_i| %>
+        <tr>
+          <td><%= u_i.name %></td>
+          <td><%= u_i.stuN %></td>
+          <td><%= u_i.email %></td>
+          <% if u_i.seatNumber == nil%>
+            <td>미신청</td>
+          <% else %>
+            <td><%= u_i.seatNumber %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
