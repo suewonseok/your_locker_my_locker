@@ -4,4 +4,12 @@
    <%= file_field_tag :file %>
    <%= submit_tag "등록" %>
   <% end %>
+  <h4>직접등록</h4>
+  <%= form_tag csv_index_path do %>
+    이름<input type = "text" name = "name">
+    학번<input type = "text" name = "stuN">
+    이메일<input type = "text" name = "email" placeholder="종정시 이메일">
+    비밀번호<input type = "text" name = "password" placeholder="생년월일8자리">
+    <input type="submit" value="완료">
+  <% end %>
 </div>

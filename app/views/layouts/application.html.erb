@@ -18,10 +18,12 @@
         <a href="/" class="brand-logo">네자리 내자리</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
+          <% if user_signed_in? %>
+            <li><%= current_user.name %>님 안녕하세요.</li>
+          <% end %>
           <li><a href="/posts">HOME</a></li>
           <% if user_signed_in? %>
-            <li><%= link_to new_post_path do %><%= current_user.name %><% end %></li>
-            <li><%= link_to "Sign out", destroy_user_session_path, method: "delete" %></li>
+            <li><%= link_to new_post_path do %>회원정보<% end %></li>
             <li><%= link_to "사물함 신청", box_index_path %></li>
             <% if user_admin? %>
               <li><%= link_to "신청현황", admin_index_path %></li>
@@ -29,7 +31,9 @@
             <% end %>
           <% else %>
             <li><a href="/users/sign_in">Sign in</a></li>
-            <li><a href="/users/sign_up">Sign up</a></li>
+          <% end %>
+          <% if user_signed_in? %>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: "delete" %></li>
           <% end %>
         </ul>
         <ul class="side-nav" id="mobile-demo">
