@@ -1,17 +1,40 @@
-<div class="container">
-  <div class="upperspace">
+<div id="page-wrapper">
+<div class="lefnavspace">
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    회원정보파일 업로드 <small>User info file Upload</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li class="active">
+                        '네자리내자리'는 엑셀의 CSV 파일을 이용하여 회원정보를 업로드 할 수 있습니다.
+                    </li>
+                </ol>
+            </div>
+        </div>
+
   <h4>파일선택</h4>
+  <hr>
   <%= form_tag import_csv_index_path, multipart: true do %>
    <%= file_field_tag :file %>
+   <br>
    <%= submit_tag "등록" %>
   <% end %>
+  <br>
+  <br>
   <h4>직접등록</h4>
+  <hr>
   <%= form_tag csv_index_path do %>
     이름<input type = "text" name = "name">
     학번<input type = "text" name = "stuN">
     이메일<input type = "text" name = "email" placeholder="종정시 이메일">
-    비밀번호<input type = "text" name = "password" placeholder="생년월일8자리">
+    비밀번호<input type = "text" name = "password" placeholder="생년월일8자리"><br>
+    <br>
     <input type="submit" value="완료">
   <% end %>
+</div>
 </div>
 </div>
