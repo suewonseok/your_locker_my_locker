@@ -1,4 +1,5 @@
 class BoxController < ApplicationController
+  layout "user"
   before_action :user_apply?, only: [:index, :create, :new]
 
   def index
