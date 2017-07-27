@@ -12,7 +12,7 @@
     <title>네자리내자리</title>
 
     <%= csrf_meta_tags %>
-    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 <!-- Custom CSS -->
 <link href="custom.css" rel="stylesheet">
 <!-- Bootstrap Core CSS -->
@@ -32,7 +32,10 @@
 <script src="jquery.easing.min.js"></script>
 <script src="scrolling-nav.js"></script>
 
-
+<!-- Less-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.3.1/less.min.js"></script>
+<link rel="stylesheet/less" type="text/css" href="style.less" />
+<script src="less-1.7.0.min.js"></script>=
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -76,7 +79,7 @@
                     </li>
                   </li>
                   <li class="dropdown">
-                      <a href="/#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><b class="caret"></b></a>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><b class="caret"></b></a>
                       <ul class="dropdown-menu alert-dropdown">
                         <% if user_signed_in? %>
                           <li><%= current_user.name %>님 안녕하세요.</li>
