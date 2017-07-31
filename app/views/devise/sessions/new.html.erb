@@ -1,15 +1,14 @@
-<div class="container">
-  <h2>로그인</h2>
+<div class="container text-center" style="margin-top:10em;">
+
+  <h2>네자리내자리</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.label :이메일 %><br />
-      <%= f.email_field :email, autofocus: true, placeholder: "종합정보시스템 이메일" %>
+      <%= f.email_field :email, autofocus: true, placeholder: "아이디" %>
     </div>
 
     <div class="field">
-      <%= f.label :비밀번호 %><br />
-      <%= f.password_field :password, autocomplete: "off", placeholder: "생년월일8자리" %>
+      <%= f.password_field :password, autocomplete: "off", placeholder: "비밀번호" %>
     </div>
 
     <% if devise_mapping.rememberable? -%>

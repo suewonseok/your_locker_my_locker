@@ -3,8 +3,8 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-@import url(//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(https://cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css);
 
 *
 {
@@ -74,14 +74,10 @@ of those sections to manage the look and feel of the site. */
     text-align: center;
     background: #eee;
 }
-
-/* sign up*/
-#signup{
-	margin-top: 10em;
-}
-/* sign in*/
-#signin{
-	margin-top: 10em;
+/*sign in*/
+.field{
+	height:30em;
+	width:60em;
 }
 /* box */
 .but {
