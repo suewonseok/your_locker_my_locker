@@ -1,5 +1,10 @@
 <div id="page-wrapper">
+<<<<<<< HEAD
     <div class="container container-fluid">
+=======
+<div class="lefnavspace">
+    <div class="container-fluid">
+>>>>>>> 16011c6b21de67bd0750bd10cf527c5235cc1aa2
 
         <!-- Page Heading -->
         <div class="row">
@@ -14,6 +19,7 @@
                 </ol>
             </div>
         </div>
+<<<<<<< HEAD
   <h2>파일선택</h2>
   <hr>
   <%= form_tag import_csv_index_path, multipart: true do %>
@@ -46,6 +52,27 @@
     <br>
   </table>
     <input class="btn btn-default" type="submit" value="완료">
+=======
+
+  <h4>파일선택</h4>
+  <hr>
+  <%= form_tag import_csv_index_path, multipart: true do %>
+   <%= file_field_tag :file %>
+   <br>
+   <%= submit_tag "등록" %>
+  <% end %>
+  <br>
+  <br>
+  <h4>직접등록</h4>
+  <hr>
+  <%= form_tag csv_index_path do %>
+    이름<input type = "text" name = "name">
+    학번<input type = "text" name = "stuN">
+    이메일<input type = "text" name = "email" placeholder="종정시 이메일">
+    비밀번호<input type = "text" name = "password" placeholder="생년월일8자리"><br>
+    <br>
+    <input type="submit" value="완료">
+>>>>>>> 16011c6b21de67bd0750bd10cf527c5235cc1aa2
   <% end %>
 </div>
 </div>

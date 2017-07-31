@@ -1,5 +1,10 @@
 <div id="page-wrapper">
+<<<<<<< HEAD
     <div class="container container-fluid">
+=======
+  <div class="upperspace">
+    <div class="container-fluid">
+>>>>>>> 16011c6b21de67bd0750bd10cf527c5235cc1aa2
 
         <!-- Page Heading -->
         <div class="row">
@@ -11,6 +16,7 @@
                   <li>이름 : <%= current_user.name %></li>
                   <li>이메일 : <%= current_user.email %></li>
                   <% if current_user.seatNumber != nil %>
+<<<<<<< HEAD
                     <% if current_user.admin != true %>
                       <li>사물함 : <%= current_user.seatNumber %><%= link_to "사물함 취소", box_path(current_user.id), method:"delete" %></li>
                     <% end %>
@@ -22,5 +28,16 @@
                   <li><%= link_to "비밀번호수정", edit_user_registration_path %></li>
                 </ul>
               </div>
+=======
+                    <li>사물함 : <%= current_user.seatNumber %><%= link_to "사물함 취소", box_path(current_user.id), method:"delete" %></li>
+                  <% else %>
+                    <li>사물함 : 신청하지 않으셨습니다.</li>
+                  <% end %>
+                  <li><%= link_to "비밀번호수정", edit_user_registration_path %></li>
+                </ul>
+            </div>
+        </div>
+      </div>
+>>>>>>> 16011c6b21de67bd0750bd10cf527c5235cc1aa2
       </div>
 </div>
